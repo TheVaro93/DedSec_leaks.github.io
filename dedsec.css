@@ -306,3 +306,66 @@ dd{margin:0;font-weight:900}
   .nav{display:none}
   .board{grid-template-columns:1fr}
 }
+
+.nav .active{color:var(--green);}
+
+.dropline{
+  display:grid;
+  grid-template-columns: 1fr 90px;
+  gap:12px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;
+  background: rgba(255,255,255,.02);
+  margin-top:10px;
+}
+
+.dropline:hover{
+  border-color: rgba(107,255,138,.45);
+}
+
+.dropline.featured{
+  grid-template-columns: 1fr 120px;
+}
+
+.pill{
+  display:inline-block;
+  font-size:11px;
+  padding:4px 8px;
+  border:1px solid rgba(255,255,255,.20);
+  border-radius:999px;
+  color:var(--muted);
+  margin-bottom:8px;
+}
+
+.pill.red{
+  border-color: rgba(255,77,77,.55);
+  color:#ffd2d2;
+}
+
+.title{
+  font-weight:900;
+  font-size:16px;
+  margin:0 0 4px;
+  color:rgba(255,255,255,.92);
+}
+
+.desc{
+  font-size:13px;
+  color:var(--muted);
+}
+
+.stamp{
+  width:74px;
+  height:74px;
+  border:1px dashed rgba(255,255,255,.25);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.45);
+}
+
+.left, .right{position:relative}
