@@ -1,24 +1,35 @@
-const copyBtn = document.getElementById("copyBtn");
-const topBtn = document.getElementById("topBtn");
-const twAge = document.getElementById("twAge");
-
-function setAge(){
-  const mins = 15 + Math.floor(Math.random() * 40);
-  twAge.textContent = `${mins}m`;
+const clockEls = document.querySelectorAll("#clock");
+function tick(){
+  const d = new Date();
+  clockEls.forEach(el => el.textContent = d.toLocaleTimeString("en-GB"));
 }
-setAge();
+tick();
+setInterval(tick, 1000);
 
-copyBtn.addEventListener("click", async () => {
-  try{
-    await navigator.clipboard.writeText(location.href);
-    copyBtn.textContent = "Copied";
-    setTimeout(()=>copyBtn.textContent="Copy link", 900);
-  }catch(e){
-    copyBtn.textContent = "Error";
-    setTimeout(()=>copyBtn.textContent="Copy link", 900);
-  }
-});
+const q = document.getElementById("q");
+const clear = document.getElementById("clear");
+const list = document.getElementById("list");
+const count = document.getElementById("count");
 
-topBtn.addEventListener("click", () => {
-  window.scrollTo({top:0,behavior:"smooth"});
+function update(){
+  if(!list) return;
+  const rows = Array.from(list.querySelectorAll(".row"));
+  const term = (q?.value || "").trim().toLowerCase();
+
+  let shown = 0;
+  rows.forEach(r=>{
+    const hay = (r.textContent + " " + (r.getAttribute("data-tags")||"")).toLowerCase();
+    const ok = !term || hay.includes(term);
+    r.style.display = ok ? "" : "none";
+    if(ok) shown++;
+  });
+
+  if(count) count.textContent = shown + " shown";
+}
+update();
+
+q?.addEventListener("input", update);
+clear?.addEventListener("click", ()=>{
+  q.value = "";
+  update();
 });

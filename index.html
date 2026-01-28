@@ -2,81 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>dedsec_leaks // home</title>
+  <title>dedsec_leaks :: index</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="dedsec.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header class="top">
-    <div class="wrap top-row">
-      <div class="brand">
-        <span class="sig">dedsec_leaks</span>
-        <span class="tag">home / drops</span>
-      </div>
 
-      <nav class="nav">
-        <a class="active" href="dedsec-index.html">home</a>
-        <a href="dedsec.html">latest</a>
-        <a href="#">archive</a>
-      </nav>
+  <header class="hdr">
+    <div class="brand">
+      <span class="sig">dedsec_leaks</span>
+      <span class="muted">/ public mirror / unstable</span>
+    </div>
+
+    <form class="search" onsubmit="return false">
+      <input id="q" type="text" value="" placeholder="search: wd / paris / ubi / metro / ???">
+      <button id="clear" type="button">clear</button>
+    </form>
+
+    <div class="mini">
+      <span class="pill">online</span>
+      <span class="sep">|</span>
+      <span class="muted">results:</span> <span id="count"></span>
+      <span class="sep">|</span>
+      <span class="muted">time:</span> <span id="clock"></span>
     </div>
   </header>
 
   <main class="wrap">
-    <section class="panel">
-      <div class="kicker">LATEST</div>
+    <div class="hint muted">
+      click a title. tags are fake metadata. nothing is verified. everything is formatted to look verified.
+    </div>
 
-      <a class="dropline featured" href="dedsec.html">
-        <div class="left">
-          <div class="pill red">WATCH DOGS</div>
-          <div class="title">UNDERGROUND // PARIS</div>
-          <div class="desc">Project exists. Early pre-production. Montreal + Paris. No announcement soon.</div>
-        </div>
-        <div class="right">
-          <div class="stamp">WD_UG</div>
-        </div>
+    <div class="list" id="list">
+
+      <a class="row hot" href="post.html" data-tags="watch dogs underground paris metro ubisoft mtl preprod">
+        <span class="col date">2026-01-27 20:01</span>
+        <span class="col title">[WD] UNDERGROUND // PARIS BUILD EXISTS (pre-prod) — MTL + PAR</span>
+        <span class="col tags">
+          <span class="t">watch dogs</span>
+          <span class="t">underground</span>
+          <span class="t">paris</span>
+          <span class="t red">hot</span>
+          <span class="t">pre-prod</span>
+          <span class="t">artifact</span>
+        </span>
       </a>
 
-      <div class="kicker" style="margin-top:14px;">OTHER DROPS</div>
-
-      <a class="dropline" href="#">
-        <div class="left">
-          <div class="pill">UBISOFT</div>
-          <div class="title">Internal prototypes (2024)</div>
-          <div class="desc">Multiple small teams testing concepts across existing IPs.</div>
-        </div>
-        <div class="right"><div class="stamp">UBI</div></div>
+      <a class="row" href="#" data-tags="ubisoft prototype cancellation internal pitch">
+        <span class="col date">2026-01-26 03:17</span>
+        <span class="col title">[UBI] internal prototypes list (2024) — redacted</span>
+        <span class="col tags">
+          <span class="t">ubisoft</span>
+          <span class="t">prototype</span>
+          <span class="t">internal</span>
+          <span class="t">redacted</span>
+        </span>
       </a>
 
-      <a class="dropline" href="#">
-        <div class="left">
-          <div class="pill">LOCATION</div>
-          <div class="title">Paris used for test builds</div>
-          <div class="desc">Dense districts + metro nodes referenced in early notes.</div>
-        </div>
-        <div class="right"><div class="stamp">PAR</div></div>
+      <a class="row" href="#" data-tags="paris metro nodes surveillance cams">
+        <span class="col date">2026-01-24 22:40</span>
+        <span class="col title">[LOC] PARIS metro nodes / camera nets / street density notes</span>
+        <span class="col tags">
+          <span class="t">paris</span>
+          <span class="t">metro</span>
+          <span class="t">cams</span>
+          <span class="t">notes</span>
+        </span>
       </a>
 
-      <a class="dropline" href="#">
-        <div class="left">
-          <div class="pill">ARCHIVE</div>
-          <div class="title">Cancelled Watch Dogs concepts</div>
-          <div class="desc">Ideas that never passed internal validation.</div>
-        </div>
-        <div class="right"><div class="stamp">WD</div></div>
+      <a class="row" href="#" data-tags="watch dogs concept cancelled pitch deck">
+        <span class="col date">2026-01-22 11:02</span>
+        <span class="col title">[WD] cancelled concepts dump — “ghost build” (never shipped)</span>
+        <span class="col tags">
+          <span class="t">watch dogs</span>
+          <span class="t">archive</span>
+          <span class="t">cancelled</span>
+        </span>
       </a>
 
-      <div class="micro muted" style="margin-top:12px;">
-        Fictional site for a school project. Not an official Ubisoft source.
-      </div>
-    </section>
+      <a class="row" href="#" data-tags="leaks misinformation formatting credibility">
+        <span class="col date">2026-01-21 09:51</span>
+        <span class="col title">[META] how fake leaks look real: certainty + formatting + “proofs”</span>
+        <span class="col tags">
+          <span class="t">meta</span>
+          <span class="t">misinfo</span>
+          <span class="t">formatting</span>
+        </span>
+      </a>
+
+      <a class="row" href="#" data-tags="ubisoft paris studio mtl team split">
+        <span class="col date">2026-01-19 16:33</span>
+        <span class="col title">[UBI] studio split: MTL / PAR tasks mapping (speculation)</span>
+        <span class="col tags">
+          <span class="t">ubisoft</span>
+          <span class="t">mtl</span>
+          <span class="t">par</span>
+          <span class="t">speculation</span>
+        </span>
+      </a>
+
+    </div>
+
+    <div class="foot muted">
+      fictional site for a school project (media literacy). not an official source.
+    </div>
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-row">
-      <span class="muted">signal stays anonymous</span>
-    </div>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
